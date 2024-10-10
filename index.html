@@ -138,58 +138,45 @@
            Last one stands will be inherited with a crown👑 that speaks about ages!!
           </p>
 
-<section class="tournament-phases">
-
-  <!-- Phase 1: Classic Bermuda Match -->
-  <div class="phase-section">
-    <h2 class="phase-title">Phase 1: Classic Bermuda Match</h2>
-
-    <!-- Pipeline between rounds -->
-    <div class="round-pipeline">
-      <div class="round-card" data-transition="fade-up">
-        <h3 class="round-title">Round 1</h3>
-        <div class="round-details">
-          <p class="round-time">Time: 10:00 AM</p>
-          <p class="round-date">Date: 25th Oct 2024</p>
+<div class="tournament-format">
+    <h2 class="section-title">FORMAT</h2>
+    
+    <div class="round" onclick="toggleDescription('phase1-desc')">
+        <h3>PHASE 1</h3>
+        <p class="round-dates">Classic Bermuda Match</p>
+        <div id="phase1-desc" class="description">
+            <p><strong>Duration:</strong> Based on team count (If >10 teams)</p>
+            <p><strong>Match Type:</strong> Classic Bermuda Match</p>
+            <p><strong>Objective:</strong> Top teams advance to Phase 2 based on match performance.</p>
         </div>
-      </div>
-      <div class="pipeline-line"></div>
-      <div class="round-card" data-transition="fade-up">
-        <h3 class="round-title">Round 2</h3>
-        <div class="round-details">
-          <p class="round-time">Time: 11:30 AM</p>
-          <p class="round-date">Date: 25th Oct 2024</p>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <!-- Phase 2: Clash Squad Match -->
-  <div class="phase-section">
-    <h2 class="phase-title">Phase 2: Clash Squad Match</h2>
-
-    <!-- Pipeline between rounds -->
-    <div class="round-pipeline">
-      <div class="round-card" data-transition="fade-up">
-        <h3 class="round-title">Round 1</h3>
-        <div class="round-details">
-          <p class="round-time">Time: 1:00 PM</p>
-          <p class="round-date">Date: 25th Oct 2024</p>
+    <div class="round" onclick="toggleDescription('phase2-desc')">
+        <h3>PHASE 2</h3>
+        <p class="round-dates">Clash Squad Matches</p>
+        <div id="phase2-desc" class="description">
+            <p><strong>Duration:</strong> Remaining teams after Phase 1</p>
+            <p><strong>Match Type:</strong> Clash Squad Matches</p>
+            <p><strong>Objective:</strong> Determine top team from each match</p>
         </div>
-      </div>
-      <div class="pipeline-line"></div>
-      <div class="round-card" data-transition="fade-up">
-        <h3 class="round-title">Round 2</h3>
-        <div class="round-details">
-          <p class="round-time">Time: 2:30 PM</p>
-          <p class="round-date">Date: 25th Oct 2024</p>
-        </div>
-      </div>
     </div>
-  </div>
 
-</section>
+    <div class="round" onclick="toggleDescription('finals-desc')">
+        <h3>FINALS</h3>
+        <p class="round-dates">Final Match</p>
+        <div id="finals-desc" class="description">
+            <p><strong>Match Type:</strong> Clash Squad Final Match</p>
+            <p><strong>Objective:</strong> Winning team to be awarded cash prize based on participation.</p>
+        </div>
+    </div>
+</div>
 
+<script>
+    function toggleDescription(id) {
+        var desc = document.getElementById(id);
+        desc.style.display = (desc.style.display === "block") ? "none" : "block";
+    }
+</script>
 
 
 
