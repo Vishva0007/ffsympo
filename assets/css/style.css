@@ -109,81 +109,59 @@
   --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
 
 }
-.tournament-phases {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+.tournament-format {
+    background-color: #6a0dad; /* Purple background */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    font-family: Arial, sans-serif;
 }
 
-.phase-section {
-  background: #111;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-  color: #fff;
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
 }
 
-.phase-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ff4500;
-  text-transform: uppercase;
-  text-align: center;
+.round {
+    background-color: #8e44ad; /* Lighter purple for rounds */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.round-pipeline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
+.round:hover {
+    background-color: #9b59b6; /* Even lighter on hover */
 }
 
-.round-card {
-  background: #222;
-  padding: 1.5rem;
-  border-radius: 10px;
-  width: 30%;
-  text-align: center;
-  border: 2px solid #ff4500;
-  box-shadow: 0 4px 8px rgba(255, 69, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
+.round h3 {
+    margin: 0;
+    font-size: 1.5em;
 }
 
-.round-card:hover {
-  transform: scale(1.05);
+.round-dates {
+    font-size: 1em;
+    color: #ddd;
+    margin-bottom: 10px;
 }
 
-.round-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #ff4500;
-  margin-bottom: 0.5rem;
+.description {
+    display: none; /* Hidden by default */
+    padding-top: 10px;
+    font-size: 0.9em;
+    color: #fff;
 }
 
-.round-details p {
-  font-size: 1.1rem;
-  margin: 0;
-  color: #ddd;
+.description p {
+    margin: 5px 0;
 }
 
-.pipeline-line {
-  height: 2px;
-  background-color: #ff4500;
-  flex-grow: 1;
-  margin: 0 1rem;
-  position: relative;
-}
 
-[data-transition="fade-up"] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-[data-transition="fade-up"].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 
 
