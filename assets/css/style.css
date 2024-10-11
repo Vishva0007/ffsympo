@@ -109,6 +109,54 @@
   --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
 
 }
+/* General style for the guidelines section */
+#guidelines {
+  background-color: #1a1a1d;
+  color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Heading style */
+#guidelines h2, #guidelines h3, #guidelines h4 {
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* List and paragraph styling */
+#guidelines ul, #guidelines p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#guidelines ul li {
+  padding: 5px 0;
+  margin-left: 20px;
+}
+
+/* Add neon border on hover */
+#guidelines h2:hover, #guidelines h3:hover {
+  color: #00ff99;
+  text-shadow: 0 0 8px #00ff99;
+}
+
+/* Link styling for any internal or external links */
+#guidelines a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+#guidelines a:hover {
+  text-decoration: underline;
+}
+
+/* Adding a subtle transition effect */
+#guidelines, #guidelines a {
+  transition: all 0.3s ease-in-out;
+}
+
 .tournament-format {
     background-color: #6a0dad; /* Purple background */
     padding: 20px;
