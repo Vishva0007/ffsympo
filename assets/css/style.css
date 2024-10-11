@@ -1040,24 +1040,22 @@ body {
   /**
    * CUSTOM CURSOR
    */
-
-.cursor {
+ .cursor {
     display: block;
     position: fixed;
     top: 0;
     left: 0;
-    width: 40px; /* Increased size */
-    height: 40px; /* Increased size */
-    background: linear-gradient(135deg, #ff6b6b, #ffcc6b); /* Bright gradient */
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-purple);
     border-radius: var(--radius-circle);
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5); /* Glow effect */
     transform: translate(-50%, -50%);
-    opacity: 0.8; /* Slightly more opaque */
+    opacity: 0;
     pointer-events: none;
     z-index: 6;
     transition: var(--transition-1);
     transition-property: opacity, transform;
-}
+  }
 
 /* Add hover effect */
 
