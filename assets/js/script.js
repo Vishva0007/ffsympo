@@ -19,29 +19,31 @@ const addEventOnElements = function (elements, eventType, callback) {
  * navbar will show after clicking menu button
  */
 
+// Query for the navbar, the toggler button, and all navigation links
 const navbar = document.querySelector("[data-navbar]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 
-// Function to toggle the navbar and button
+// Function to toggle the navbar and toggle button
 const toggleNav = function () {
   navbar.classList.toggle("active");
   navToggler.classList.toggle("active");
-};
+}
 
 // Add click event to the nav toggle button
 navToggler.addEventListener("click", toggleNav);
 
-// Function to close the navbar when clicking on a nav link
+// Function to close the navbar when a link is clicked
 const navClose = () => {
   navbar.classList.remove("active");
   navToggler.classList.remove("active");
 };
 
-// Add event listener to each nav link
+// Add click event to each navigation link
 navLinks.forEach(link => {
   link.addEventListener("click", navClose);
 });
+
 
 
 
