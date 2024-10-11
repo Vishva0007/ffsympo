@@ -25,7 +25,7 @@ const navLinks = document.querySelectorAll("[data-nav-link]");
 
 const toggleNav = function () {
   navbar.classList.toggle("active");
-  navToggler.classList.toggle("active");  // Use navToggler instead of 'this'
+  this.classList.toggle("active");
 }
 
 navToggler.addEventListener("click", toggleNav);
@@ -35,11 +35,7 @@ const navClose = () => {
   navToggler.classList.remove("active");
 }
 
-// You can either define `addEventOnElements` or use forEach loop like this:
-navLinks.forEach(link => {
-  link.addEventListener("click", navClose);
-});
-
+addEventOnElements(navLinks, "click", navClose); 
 
 
 
