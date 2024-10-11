@@ -110,52 +110,73 @@
 
 }
 /* General style for the guidelines section */
+/* Guidelines section styling */
 #guidelines {
-  background-color: #1a1a1d;
-  color: #f5f5f5;
+  background-color: #2b0042;
+  color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  font-family: 'Orbitron', sans-serif;
+  border-radius: 15px;
+  font-family: 'Audiowide', sans-serif;
+  border: 3px solid #9d00ff;
+  box-shadow: 0 0 20px #ff00ff;
 }
 
-/* Heading style */
-#guidelines h2, #guidelines h3, #guidelines h4 {
+/* Headings */
+#guidelines h2, #guidelines h3 {
   color: #ffcc00;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
-/* List and paragraph styling */
-#guidelines ul, #guidelines p {
-  font-size: 18px;
-  line-height: 1.6;
+/* List styling */
+#guidelines ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 #guidelines ul li {
-  padding: 5px 0;
-  margin-left: 20px;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 5px solid #00ffff;
+  transition: all 0.3s ease;
 }
 
-/* Add neon border on hover */
-#guidelines h2:hover, #guidelines h3:hover {
-  color: #00ff99;
-  text-shadow: 0 0 8px #00ff99;
+#guidelines ul li:hover {
+  background-color: #9d00ff;
+  transform: scale(1.05);
 }
 
-/* Link styling for any internal or external links */
-#guidelines a {
-  color: #00ffff;
-  text-decoration: none;
+/* Pipeline effect for guidelines */
+#guidelines .pipeline {
+  position: relative;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #00ff99;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-#guidelines a:hover {
-  text-decoration: underline;
+#guidelines .pipeline:before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  height: 10px;
+  width: 10px;
+  background-color: #00ff99;
+  border-radius: 50%;
+  transform: translateY(-50%);
 }
 
-/* Adding a subtle transition effect */
-#guidelines, #guidelines a {
-  transition: all 0.3s ease-in-out;
+#guidelines .pipeline:hover {
+  background-color: #00ff99;
+  color: #1a1a1d;
 }
+
+#guidelines p {
+  font-size: 18px;
+}
+
 
 .tournament-format {
     background-color: #6a0dad; /* Purple background */
