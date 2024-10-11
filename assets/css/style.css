@@ -538,10 +538,19 @@ body {
   font-weight: var(--weight-semiBold);
   color: var(--text-white);
 }
+.navbar-item {
+  border-block-start: none;  /* No top border for all items */
+  border-block-end: 1px solid var(--border-space-cadet);  /* Add bottom border to all items */
+}
 
-.navbar-item { border-block-start: 1px solid var(--border-space-cadet); }
+.navbar-item:first-child {
+  border-block-start: 1px solid var(--border-space-cadet);  /* Top border only for the first item */
+}
 
-.navbar-item:last-child { border-block-end: 1px solid var(--border-space-cadet); }
+.navbar-item:last-child {
+  border-block-end: none;  /* Remove the bottom border from the last item */
+}
+
 
 
 
