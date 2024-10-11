@@ -528,12 +528,6 @@ body {
   transition: clip-path 500ms var(--cubic-out), visibility 500ms var(--cubic-out);
 }
 
-.navbar.active {
-    clip-path: var(--clip-path-2); /* Should reveal the navbar */
-    display:none;
-    opacity: 1; /* Optional: Fade-in effect */
-    transition: visibility 0s, opacity 0.5s linear; /* Optional: Smooth transition */
-}
 
 .navbar-link {
   padding: 12px 25px;
