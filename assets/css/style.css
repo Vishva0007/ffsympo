@@ -1026,22 +1026,52 @@ body {
    * CUSTOM CURSOR
    */
 
-  .cursor {
+.cursor {
     display: block;
     position: fixed;
     top: 0;
     left: 0;
-    width: 30px;
-    height: 30px;
-    background-color: var(--bg-purple);
+    width: 40px; /* Increased size */
+    height: 40px; /* Increased size */
+    background: linear-gradient(135deg, #ff6b6b, #ffcc6b); /* Bright gradient */
     border-radius: var(--radius-circle);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5); /* Glow effect */
     transform: translate(-50%, -50%);
-    opacity: 0;
+    opacity: 0.8; /* Slightly more opaque */
     pointer-events: none;
     z-index: 6;
     transition: var(--transition-1);
     transition-property: opacity, transform;
-  }
+}
+
+/* Add hover effect */
+a:hover .cursor,
+button:hover .cursor {
+    background: rgba(255, 255, 255, 0.7); /* Light color on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Cursor trail effect */
+.cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px; /* Smaller size for the trail */
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Soft white for the trail */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+/* Animate trail on mouse movement */
+body:hover .cursor::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
 
   body:hover .cursor { opacity: 0.5; }
 
