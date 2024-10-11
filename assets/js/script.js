@@ -149,3 +149,14 @@ addEventOnElements(hoverElements, "mouseover", function () {
 addEventOnElements(hoverElements, "mouseout", function () {
   cursor.classList.remove("hovered");
 });
+const cursorMove = function (event) {
+  cursor.style.top = `${event.clientY}px`;
+  cursor.style.left = `${event.clientX}px`;
+
+  const trail = cursor.querySelector('.trail'); // Get the trail
+  if (trail) {
+    trail.style.top = `${event.clientY}px`;
+    trail.style.left = `${event.clientX}px`;
+  }
+};
+
