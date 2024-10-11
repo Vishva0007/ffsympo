@@ -527,6 +527,10 @@ body {
   visibility: hidden; /* Initially hidden */
   transition: clip-path 500ms var(--cubic-out), visibility 500ms var(--cubic-out);
 }
+.navbar.active {
+  clip-path: var(--clip-path-2);
+  visibility: visible;
+}
 
 
 .navbar-link {
