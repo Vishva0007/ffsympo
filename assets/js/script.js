@@ -24,29 +24,21 @@ const navbar = document.querySelector("[data-navbar]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 
-// Function to toggle the navbar and toggle button
 const toggleNav = function () {
   navbar.classList.toggle("active");
   navToggler.classList.toggle("active");
 }
 
-// Add click event to the nav toggle button
 navToggler.addEventListener("click", toggleNav);
 
-// Function to close the navbar when a link is clicked
 const navClose = () => {
   navbar.classList.remove("active");
   navToggler.classList.remove("active");
 };
 
-// Add click event to each navigation link
 navLinks.forEach(link => {
   link.addEventListener("click", navClose);
 });
-
-
-
-
 
 /**
  * HEADER and BACK TOP BTN
