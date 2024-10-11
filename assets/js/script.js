@@ -23,19 +23,26 @@ const navbar = document.querySelector("[data-navbar]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 
+// Function to toggle the navbar and button
 const toggleNav = function () {
   navbar.classList.toggle("active");
-  this.classList.toggle("active");
-}
+  navToggler.classList.toggle("active");
+};
 
+// Add click event to the nav toggle button
 navToggler.addEventListener("click", toggleNav);
 
+// Function to close the navbar when clicking on a nav link
 const navClose = () => {
   navbar.classList.remove("active");
   navToggler.classList.remove("active");
-}
+};
 
-addEventOnElements(navLinks, "click", navClose); 
+// Add event listener to each nav link
+navLinks.forEach(link => {
+  link.addEventListener("click", navClose);
+});
+
 
 
 
