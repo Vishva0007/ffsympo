@@ -823,6 +823,7 @@ body {
   padding-block-end: 10px;
   margin-block-end: 20px;
   max-width: max-content;
+  
 }
 
 .footer-list-title::after {
@@ -837,9 +838,7 @@ body {
   padding-block: 5px;
   color: var(--text-white);
   transition: var(--transition-1);
-  display: inline-block;
-  width:150px;
-  height:73px;
+ 
 
 }
 
