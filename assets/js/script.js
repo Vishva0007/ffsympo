@@ -20,7 +20,7 @@ const addEventOnElements = function (elements, eventType, callback) {
  */
 
 // Query for the navbar, the toggler button, and all navigation links
-const navbar = document.querySelector("[data-navbar]");
+/**const navbar = document.querySelector("[data-navbar]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 
@@ -39,7 +39,7 @@ const navClose = () => {
 navLinks.forEach(link => {
   link.addEventListener("click", navClose);
 });
-
+*/
 /**
  * HEADER and BACK TOP BTN
  * header and back top btn will be active after scrolled down to 100px of screen

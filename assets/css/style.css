@@ -523,7 +523,7 @@ body {
   left: 12px;
   background-color: var(--bg-oxford-blue);
   padding: 0 15px;
-  clip-path: var(--clip-path-1); /* This should hide the navbar initially */
+  clip-path: var(--clip-path-1); /* This should hide the navbar initially*/
   visibility: hidden; /* Initially hidden */
   transition: clip-path 500ms var(--cubic-out), visibility 500ms var(--cubic-out);
 }
