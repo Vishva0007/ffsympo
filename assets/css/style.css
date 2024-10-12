@@ -99,6 +99,8 @@
   --clip-path-7: polygon(100% 0, 100% 60%, 90% 100%, 0 100%, 0 0);
   --clip-path-8: polygon(0% 0%, 70% 0, 100% 30%, 100% 100%, 0 100%);
   --clip-path-9: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  --clip-path-1: inset(0 0 100% 0); /* Hides the navbar completely */
+  --clip-path-2: inset(0 0 0% 0); /* Shows the navbar completely */
 
   /**
    * TRANSITION
@@ -109,6 +111,90 @@
   --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
 
 }
+/* General style for the guidelines section */
+/* Guidelines section styling */
+#guidelines {
+  background-color: #2b0042;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  font-family: 'Audiowide', sans-serif;
+  border: 3px solid #9d00ff;
+  box-shadow: 0 0 20px #ff00ff;
+}
+.trail {
+  position: absolute;
+  width: 20px; /* Size of the trail */
+  height: 20px; /* Size of the trail */
+  background-color: rgba(255, 255, 255, 0.5); /* Trail color */
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.5s ease;
+  opacity: 0; /* Start invisible */
+}
+
+/* Add a class to show the trail */
+.cursor.hovered .trail {
+  opacity: 1; /* Make the trail visible on hover */
+}
+
+/* Headings */
+#guidelines h2, #guidelines h3 {
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* List styling */
+#guidelines ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#guidelines ul li {
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 5px solid #00ffff;
+  transition: all 0.3s ease;
+}
+
+#guidelines ul li:hover {
+  background-color: #9d00ff;
+  transform: scale(1.05);
+}
+
+/* Pipeline effect for guidelines */
+#guidelines .pipeline {
+  position: relative;
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #00ff99;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#guidelines .pipeline:before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  height: 10px;
+  width: 10px;
+  background-color: #00ff99;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+#guidelines .pipeline:hover {
+  background-color: #00ff99;
+  color: #1a1a1d;
+}
+
+#guidelines p {
+  font-size: 18px;
+}
+
+
 .tournament-format {
     background-color: #6a0dad; /* Purple background */
     padding: 20px;
@@ -437,15 +523,15 @@ body {
   left: 12px;
   background-color: var(--bg-oxford-blue);
   padding: 0 15px;
-  clip-path: var(--clip-path-1);
-  visibility: hidden;
-  transition: clip-path 500ms var(--cubic-out);
+  clip-path: var(--clip-path-1); /* This should hide the navbar initially*/
+  visibility: hidden; /* Initially hidden */
+  transition: clip-path 500ms var(--cubic-out), visibility 500ms var(--cubic-out);
 }
-
 .navbar.active {
   clip-path: var(--clip-path-2);
   visibility: visible;
 }
+
 
 .navbar-link {
   padding: 12px 25px;
@@ -454,10 +540,21 @@ body {
   font-weight: var(--weight-semiBold);
   color: var(--text-white);
 }
+.navbar-item {
+  border-block-start: none;  /* No top border for all items */
+  border-block-end: 1px solid var(--border-space-cadet);  /* Add bottom border to all items */
+}
 
-.navbar-item { border-block-start: 1px solid var(--border-space-cadet); }
+.navbar-item:first-child {
+  border-block-start: 1px solid var(--border-space-cadet);  /* Top border only for the first item */
+}
 
-.navbar-item:last-child { border-block-end: 1px solid var(--border-space-cadet); }
+.navbar-item:last-child {
+  border-block-end: none;  /* Remove the bottom border from the last item */
+}
+
+
+
 
 
 
@@ -956,8 +1053,7 @@ body {
   /**
    * CUSTOM CURSOR
    */
-
-  .cursor {
+ .cursor {
     display: block;
     position: fixed;
     top: 0;
@@ -974,14 +1070,7 @@ body {
     transition-property: opacity, transform;
   }
 
-  body:hover .cursor { opacity: 0.5; }
-
-  body .cursor.hovered {
-    transform: translate(-50%, -50%) scale(1.3);
-    opacity: 0.75;
-  }
-
-}
+/* Add hover effect */
 
 
 

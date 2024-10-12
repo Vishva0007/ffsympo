@@ -19,24 +19,26 @@ const addEventOnElements = function (elements, eventType, callback) {
  * navbar will show after clicking menu button
  */
 
+// Query for the navbar, the toggler button, and all navigation links
 const navbar = document.querySelector("[data-navbar]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 
 const toggleNav = function () {
   navbar.classList.toggle("active");
-  this.classList.toggle("active");
-}
+  navToggler.classList.toggle("active");
+};
 
 navToggler.addEventListener("click", toggleNav);
 
 const navClose = () => {
   navbar.classList.remove("active");
   navToggler.classList.remove("active");
-}
+};
 
-addEventOnElements(navLinks, "click", navClose);
-
+navLinks.forEach(link => {
+  link.addEventListener("click", navClose);
+});
 
 
 /**
@@ -102,15 +104,45 @@ window.addEventListener("load", revealElementOnScroll);
  * Custom cursor
  */
 
+// const cursor = document.querySelector("[data-cursor]");
+// const hoverElements = [...document.querySelectorAll("a"), ...document.querySelectorAll("button")];
+
+// const cursorMove = function (event) {
+//   cursor.style.top = `${event.clientY}px`;
+//   cursor.style.left = `${event.clientX}px`;
+// }
+
+// window.addEventListener("mousemove", cursorMove);
+
+// addEventOnElements(hoverElements, "mouseover", function () {
+//   cursor.classList.add("hovered");
+// });
+
+// addEventOnElements(hoverElements, "mouseout", function () {
+//   cursor.classList.remove("hovered");
+// });
 const cursor = document.querySelector("[data-cursor]");
 const hoverElements = [...document.querySelectorAll("a"), ...document.querySelectorAll("button")];
 
 const cursorMove = function (event) {
   cursor.style.top = `${event.clientY}px`;
   cursor.style.left = `${event.clientX}px`;
-}
+
+  // Update trail position
+  const trail = cursor.querySelector('.cursor::before');
+  if (trail) {
+    trail.style.top = `${event.clientY}px`;
+    trail.style.left = `${event.clientX}px`;
+  }
+};
 
 window.addEventListener("mousemove", cursorMove);
+
+const addEventOnElements = (elements, event, callback) => {
+  elements.forEach(element => {
+    element.addEventListener(event, callback);
+  });
+};
 
 addEventOnElements(hoverElements, "mouseover", function () {
   cursor.classList.add("hovered");
@@ -119,3 +151,5 @@ addEventOnElements(hoverElements, "mouseover", function () {
 addEventOnElements(hoverElements, "mouseout", function () {
   cursor.classList.remove("hovered");
 });
+
+
