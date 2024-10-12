@@ -27,7 +27,7 @@ const navLinks = document.querySelectorAll("[data-nav-link]");
 const toggleNav = function () {
   navbar.classList.toggle("active");
   navToggler.classList.toggle("active");
-}
+};
 
 navToggler.addEventListener("click", toggleNav);
 
