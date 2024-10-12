@@ -1119,7 +1119,7 @@ body {
    * HEADER
    */
 
-  .nav-toggle-btn { display: none; }
+  .nav-toggle-btn { display: block; }
 
   .navbar,
   .navbar.active {
